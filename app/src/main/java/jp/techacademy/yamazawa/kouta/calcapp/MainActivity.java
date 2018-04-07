@@ -38,9 +38,9 @@ public class MainActivity extends AppCompatActivity {
         Button PlusButton = (Button) findViewById(R.id.button1);
 
         PlusButton.setOnClickListener(new View.OnClickListener(){
-            public void OnClick(View v){
+            public void onClick(View v){
                 //SecondActivity.javaへ遷移
-                Intent intent = new Intent(this, SecondActivity.class);
+                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
                 startActivity(intent);
             }
         });
