@@ -15,11 +15,11 @@ public class SecondActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String value1 = intent.getStringExtra("VALUE1");
         String value2 = intent.getStringExtra("VALUE2");
-        Double.parseDouble(value1);
-        Double.parseDouble(value2);
+        Double value1_double = Double.parseDouble(value1);
+        Double value2_double = Double.parseDouble(value2);
 
         TextView textView = (TextView) findViewById(R.id.textView);
-        textView.setText(String.valueOf(value1 + value2));
+        textView.setText( value1 +"＋"+ value2 +"=" + String.valueOf(value1_double + value2_double));
     }
 
 }
