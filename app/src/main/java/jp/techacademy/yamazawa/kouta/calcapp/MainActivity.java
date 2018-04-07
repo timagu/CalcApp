@@ -41,6 +41,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v){
                 //SecondActivity.javaへ遷移
                 Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                mEditText1.getText().toString();
+                String str1 = mEditText1.getText().toString();
+                String str2 = mEditText2.getText().toString();
+                intent.putExtra("VALUE1", str1);
+                intent.putExtra("VALUE2", str2);
                 startActivity(intent);
             }
         });
