@@ -36,8 +36,24 @@ public class MainActivity extends AppCompatActivity {
         // ＋ボタンを押した場合
         //id button1の値をPulsButtonへ代入
         Button PlusButton = (Button) findViewById(R.id.button1);
+        Button MinusButton = (Button) findViewById(R.id.button2);
+        Button MultiplButton = (Button) findViewById(R.id.button3);
+        Button divisionButton = (Button) findViewById(R.id.button4);
 
         PlusButton.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                //SecondActivity.javaへ遷移
+                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                mEditText1.getText().toString();
+                String str1 = mEditText1.getText().toString();
+                String str2 = mEditText2.getText().toString();
+                intent.putExtra("VALUE1", str1);
+                intent.putExtra("VALUE2", str2);
+                startActivity(intent);
+            }
+        });
+
+        MinusButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 //SecondActivity.javaへ遷移
                 Intent intent = new Intent(MainActivity.this, SecondActivity.class);
