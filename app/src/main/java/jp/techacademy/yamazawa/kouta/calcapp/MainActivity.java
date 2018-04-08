@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         //ID「editText1」の値をmEditText1に代入
         mEditText2 = (EditText) findViewById(R.id.editText2);
 
-        //やりたい四則演算子を押す
+
         //SecondActivity.javaへ遷移
         // －ボタンを押した場合
         //SecondActivity.javaへ遷移
@@ -44,25 +44,42 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v){
                 //SecondActivity.javaへ遷移
                 Intent intent = new Intent(MainActivity.this, SecondActivity.class);
-                mEditText1.getText().toString();
-                String str1 = mEditText1.getText().toString();
-                String str2 = mEditText2.getText().toString();
-                intent.putExtra("VALUE1", str1);
-                intent.putExtra("VALUE2", str2);
-                startActivity(intent);
-            }
-        });
 
-        MinusButton.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
-                //SecondActivity.javaへ遷移
-                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
                 mEditText1.getText().toString();
+
+                //コンストラクタ
                 String str1 = mEditText1.getText().toString();
                 String str2 = mEditText2.getText().toString();
-                intent.putExtra("VALUE1", str1);
-                intent.putExtra("VALUE2", str2);
+                String value1 = intent.getStringExtra("VALUE1");
+                String value2 = intent.getStringExtra("VALUE2");
+                Double value1_double = Double.parseDouble(value1);
+                Double value2_double = Double.parseDouble(value2);
+                Double Anser = 0.0;
+
+                //やりたい四則演算子を押す
+                    //＋ボタンを押した場合
+                if (v.getId() == R.id.button1) {
+                    Anser = value1_double + value2_double;
+                    // －ボタンを押した場合
+                } else if (v.getId() == R.id.button2) {
+                    Anser = value1_double - value2_double;
+                    // ×ボタンを押した場合
+                } else if (v.getId() == R.id.button3) {
+                    Anser = value1_double * value2_double;
+                    // ÷ボタンを押した場合
+                } else if (v.getId() == R.id.button4) {
+                    Anser = value1_double / value2_double;
+                }
+
+                intent.putExtra("ANSWER",Anser);
+                //str1をVALUE1へ遷移
+                //intent.putExtra("VALUE1", str1);
+                //str1をVALUE1へ遷移
+                //intent.putExtra("VALUE2", str2);
+
+                //SecondActivity.javaへ遷移(画面遷移)
                 startActivity(intent);
+
             }
         });
     }
