@@ -15,23 +15,27 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:text="演算子の左側にある数"/>
+        android:text="演算子の左側にある数"
+        android:id = "@+id/TextView1" />
 
     <EditText
         android:id="@+id/editText1"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:text="演算子の右側にある数"/>
+        android:text="演算子の右側にある数"
+        android:id = "@+id/TextView2" />
 
     <EditText
         android:id="@+id/editText2"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"/>
 
     <Button
         android:id="@+id/button1"
