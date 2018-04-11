@@ -72,10 +72,19 @@ public class MainActivity extends AppCompatActivity {
                             Anser = value1_double * value2_double;
                             break;
                         case R.id.button4:
+                            if (value1_double == 0.0 || value2_double == 0.0){
+                                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(MainActivity.this);
+                                alertDialogBuilder.setTitle("入力エラー");
+                                alertDialogBuilder.setMessage("数値１以上の入力をお願いします。");
+                                alertDialogBuilder.setPositiveButton("OK", null);
+                                alertDialogBuilder.show();
+                                return;
+                            }else{
                             Anser = value1_double / value2_double;
                             break;
-                    }
-                }catch (NumberFormatException e){
+                            }
+                        }
+                }catch (NumberFormatException e) {
                     showAlertDialog();
                     return;
                 }
@@ -107,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
         // AlertDialog.Builderクラスを使ってAlertDialogの準備をする
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
         alertDialogBuilder.setTitle("入力エラー");
-        alertDialogBuilder.setMessage("英数字を入力して下さい。");
+        alertDialogBuilder.setMessage("数値の入力をお願いします。");
         alertDialogBuilder.setPositiveButton("OK", null);
         alertDialogBuilder.show();
     }
