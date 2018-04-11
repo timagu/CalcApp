@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
                             Anser = value1_double * value2_double;
                             break;
                         case R.id.button4:
-                            if (value1_double == 0.0 || value2_double == 0.0){
+                            if (value2_double == 0.0){
                                 AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(MainActivity.this);
                                 alertDialogBuilder.setTitle("入力エラー");
                                 alertDialogBuilder.setMessage("数値１以上の入力をお願いします。");
